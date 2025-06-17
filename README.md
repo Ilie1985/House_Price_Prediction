@@ -6,11 +6,11 @@ This project uses a multiple linear regression model to predict house prices bas
 
 ## 📂 Project Structure
 ```
-house_price_prediction/
+House_Price_Prediction/
+├── House_Pricing_Prediction.ipynb  # Jupyter Notebook with full analysis
 ├── house_prices.csv                # Dataset
-├── house_price_prediction.ipynb    # Jupyter Notebook with full analysis
-├── README.md                       # Project overview and instructions
-└── visuals/                        # Folder for saved plots and images
+├── requirements.txt                # Project dependencies
+└── README.md                       # Project overview and instructions
 ```
 
 ---
@@ -55,7 +55,7 @@ pip install -r requirements.txt
 ```bash
 jupyter notebook
 ```
-Then open `house_price_prediction.ipynb` to explore the project.
+Then open `House_Pricing_Prediction.ipynb` to explore the project.
 
 ---
 
