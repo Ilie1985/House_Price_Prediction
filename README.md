@@ -4,7 +4,15 @@ This repository demonstrates a simple machine learning workflow for predicting h
 
 The goal is to predict a house's sale price based on a few key features.
 
-## Repository Contents
+## 📂 Project Structure
+```
+House_Price_Prediction/
+├── House_Pricing_Prediction.ipynb  # Jupyter Notebook with full analysis
+├── house_prices.csv                # Dataset
+├── requirements.txt                # Project dependencies
+└── README.md                       # Project overview and instructions
+```
+
 
 - `house_prices.csv` – the dataset used for training and testing the model
 - `House_Pricing_Prediction.ipynb` – Jupyter notebook with all the code
@@ -37,6 +45,7 @@ For simplicity, the notebook focuses on four numerical predictors: `sqft_living`
 
 ## Running the Notebook
 
+
 1. (Optional) create and activate a virtual environment:
    ```bash
    python -m venv venv
@@ -51,6 +60,7 @@ For simplicity, the notebook focuses on four numerical predictors: `sqft_living`
    jupyter notebook
    ```
    Open `House_Pricing_Prediction.ipynb` and run the cells in order.
+
 
 ## Example Output
 
