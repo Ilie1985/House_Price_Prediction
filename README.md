@@ -1,8 +1,8 @@
-# 🏠 House Price Prediction with Multiple Linear Regression
+# House Price Prediction Project
 
-This project uses a multiple linear regression model to predict house prices based on key features such as square footage, number of bedrooms, bathrooms, and floors. It's ideal for demonstrating your understanding of real-world machine learning, data preparation, and model evaluation.
+This repository demonstrates a simple machine learning workflow for predicting house prices using **multiple linear regression**. The data comes from the popular [King County House Sales dataset](https://www.kaggle.com/datasets/harlfoxem/housesalesprediction), which contains over 21,000 records of home sales.
 
----
+The goal is to predict a house's sale price based on a few key features.
 
 ## 📂 Project Structure
 ```
@@ -13,101 +13,76 @@ House_Price_Prediction/
 └── README.md                       # Project overview and instructions
 ```
 
----
 
-## 📌 Problem Statement
-Predict the selling price of houses using features like:
-- Square footage of living space (`sqft_living`)
-- Number of bedrooms
-- Number of bathrooms
-- Number of floors
+- `house_prices.csv` – the dataset used for training and testing the model
+- `House_Pricing_Prediction.ipynb` – Jupyter notebook with all the code
+- `requirements.txt` – list of Python packages needed to run the notebook
 
-This is a **regression problem** solved using **multiple linear regression**.
+## Dataset Overview
 
----
+Each record in the dataset includes the sale price and attributes of a house such as:
 
-## 🧠 Skills Demonstrated
-- Data loading and exploration with `pandas`
-- Feature selection and preprocessing
-- Training a linear regression model with `scikit-learn`
-- Model evaluation (R² Score, Mean Squared Error)
-- Visualizing results with `matplotlib`
-- Predicting custom values using a trained model
-- Structuring and documenting a project for portfolio and GitHub
+- `bedrooms` – number of bedrooms
+- `bathrooms` – number of bathrooms
+- `sqft_living` – square footage of the living space
+- `sqft_lot` – total square footage of the property
+- `floors` – number of floors
+- `waterfront`, `view`, `condition`, `grade` – categorical quality indicators
+- `sqft_above` and `sqft_basement` – living area split between above ground and basement
+- `yr_built` and `yr_renovated` – year built and year renovated if applicable
+- `zipcode`, `lat`, and `long` – location information
 
----
+For simplicity, the notebook focuses on four numerical predictors: `sqft_living`, `bedrooms`, `bathrooms`, and `floors`.
 
-## ⚙️ How to Run the Project
+## How the Notebook Works
 
-### Requirements
-Create a virtual environment (optional but recommended):
-```bash
-python -m venv venv
-venv\Scripts\activate     # Windows
+1. **Load the Data** – The CSV file is read with `pandas`.
+2. **Clean and Select Features** – Rows with missing data in the selected columns are dropped.
+3. **Train the Model** – A `LinearRegression` model from `scikit‑learn` is fitted on the chosen features.
+4. **Evaluate** – The notebook prints the R² score and mean squared error to measure performance.
+5. **Predict** – A helper cell demonstrates how to pass custom values to the model and get a predicted price.
+6. **Visualization** – A scatter plot compares actual prices with predicted values.
+
+## Running the Notebook
+
+
+1. (Optional) create and activate a virtual environment:
+   ```bash
+   python -m venv venv
+   source venv/bin/activate  # On Windows use `venv\Scripts\activate`
+   ```
+2. Install dependencies:
+   ```bash
+   pip install -r requirements.txt
+   ```
+3. Start Jupyter:
+   ```bash
+   jupyter notebook
+   ```
+   Open `House_Pricing_Prediction.ipynb` and run the cells in order.
+
+
+## Example Output
+
+After training, you should see output similar to:
+
 ```
-
-### Install dependencies
-```bash
-pip install -r requirements.txt
-```
-
-### Launch Jupyter Notebook
-```bash
-jupyter notebook
-```
-Then open `House_Pricing_Prediction.ipynb` to explore the project.
-
----
-
-## 🔍 Example Prediction
-Predicting price for:
-- 2000 sqft
-- 3 bedrooms
-- 2 bathrooms
-- 1 floor
-
-The model outputs:
-```
+R² Score: 0.51
+Mean Squared Error: 66,455,438,852
 Predicted price: £517,666.39
 ```
 
----
+The scatter plot of actual vs. predicted prices gives a quick visual check of model performance – points close to the diagonal line indicate better predictions.
 
-## 📈 Visual Output
-A scatter plot shows actual vs predicted prices to evaluate model performance:
-- Blue dots: Real data
-- Red dashed line: Perfect predictions
+## Possible Extensions
 
-The closer the dots are to the line, the better the model performs.
+- Include more features from the dataset, such as location or quality grade
+- Experiment with other algorithms (e.g., Decision Trees, Random Forests)
+- Perform cross‑validation or hyperparameter tuning
+- Build a simple UI with Streamlit to allow interactive predictions
 
----
+## Author
 
-## 💡 Future Improvements
-- Add more features like location (zipcode), grade, or year built
-- Try other models (Decision Trees, Random Forest)
-- Add interactive UI using Streamlit or ipywidgets
-- Perform cross-validation and grid search
-
----
-
-## 📬 Recruiter Notes
-This project shows:
-- Practical use of regression
-- Code organization and clarity
-- Visual communication of results
-- Ability to explain machine learning in simple terms
-
-Ideal for roles in:
-- Data Analysis
-- Junior Data Science
-- Python Development
-
----
-
-## 👤 Author
 Marian Ilie
-- GitHub: [your-username](https://github.com/your-username)
-- LinkedIn: [your-profile](https://linkedin.com/in/your-profile)
 
-Feel free to clone the repo, run the notebook, and explore how data science can predict real-world outcomes!
-"# House_Price_Prediction" 
+Feel free to fork the project and explore how a basic regression approach can be used to model real estate prices.
